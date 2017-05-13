@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="2dp"> 
+
+   <ImageView android:id="@+id/SourceThumbnail"
+              android:layout_width="70dp"
+              android:layout_height="70dp"
+              android:paddingLeft="10dp"
+              android:paddingRight="10dp"
+              android:layout_alignParentLeft="true" />
+  
+   <CheckBox android:id="@+id/SourceEnabled"             
+             android:layout_width="wrap_content"
+             android:layout_height="40dp"
+             android:layout_marginRight="0dp"
+             android:layout_marginTop="10dp"
+             android:layout_toLeftOf="@id/OuterFrame"
+             android:layout_toRightOf="@id/SourceThumbnail"
+             android:paddingBottom="5dp"
+             android:textSize="16sp"/>
+
+   <TextView android:id="@+id/SourceDetails"
+             android:layout_below="@id/SourceEnabled"
+             android:layout_height="30dp"
+             android:layout_marginBottom="10dp"
+             android:layout_toRightOf="@id/SourceThumbnail"
+             android:layout_toLeftOf="@id/OuterFrame"             
+             android:layout_width="wrap_content"
+             android:paddingTop="5dp"
+             android:textSize="12sp" />
+
+  <FrameLayout android:background="@color/Soft.Crap.OuterFrame"
+               android:id="@+id/OuterFrame"
+               android:layout_alignParentRight="true"
+               android:layout_height="match_parent"
+               android:layout_marginLeft="4dp"
+               android:layout_marginRight="6dp"
+               android:layout_width="wrap_content"
+               android:padding="1dp">
+
+     <include layout="@layout/ObjectThumbnailInclude" />
+
+  </FrameLayout>
+      
+</RelativeLayout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <style name="Soft.Crap.Splash" parent ="Soft.Crap">    
+    <item name="android:windowBackground">@drawable/SplashLayers</item>
+    <item name="android:windowFullscreen">true</item>
+    <item name="android:windowNoTitle">true</item>    
+  </style>
+
+  <style name="Soft.Crap.Camera" parent ="Soft.Crap">
+    <item name="android:windowNoTitle">true</item>
+    <item name="android:windowFullscreen">true</item>    
+  </style>
+    
+  <style name="Soft.Crap" parent="@android:style/Theme.Holo.Light">
+    <item name="android:actionBarStyle">@style/Soft.Crap.Widget.ActionBar</item>
+    <item name="android:colorPrimary">@color/Soft.Crap.BarBackground</item>
+    <item name="android:windowTitleStyle">@style/WindowTitle</item>    
+  </style>
+
+  <style name="Soft.Crap.Widget.ActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
+    <item name="android:background">@color/Soft.Crap.BarBackground</item>
+    <item name="android:titleTextStyle">@style/Soft.Crap.TextAppearance.StatusBar.Title</item>
+  </style>
+
+  <style name="Soft.Crap.TextAppearance.StatusBar.Title" parent="@android:style/TextAppearance.StatusBar.Title">
+     <item name="android:textColor">@color/Soft.Crap.BarForeground</item>
+     <item name="android:textSize">22sp</item>
+     <item name="android:textStyle">bold</item>
+  </style>
+  
+  <style name="WindowTitle">
+     <item name="android:singleLine">true</item>
+     <item name="android:shadowColor">#BB000000</item>
+     <item name="android:shadowRadius">2.75</item>
+     <item name="android:textAppearance">@style/Soft.Crap.TextAppearance.Holo.WindowTitle</item>     
+  </style>
+  
+  <style name="Soft.Crap.TextAppearance.Holo.WindowTitle" parent="android:style/TextAppearance.Holo.WindowTitle">
+     <item name="android:textColor">@color/Soft.Crap.BarForeground</item>
+     <item name="android:textSize">14sp</item>
+     <item name="android:textStyle">bold</item>
+  </style>
+  
+</resources>

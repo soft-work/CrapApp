@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"                
+                android:orientation="vertical">
+    
+   <fragment android:id="@+id/BrowseFooterFragment"
+             android:layout_alignParentBottom="true"
+             android:layout_gravity="bottom"
+             android:layout_height="40dp"
+             android:layout_width="match_parent"
+             android:name="Soft.Crap.Android.Fragments.AndroidBrowseFooterFragment" />
+  
+   <ListView android:id="@+id/ObjectListView"
+             android:layout_above="@id/BrowseFooterFragment"
+             android:layout_alignParentTop="true"
+             android:layout_gravity="top"
+             android:layout_height="match_parent"
+             android:layout_width="match_parent" />
+  
+</RelativeLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  
+   <color name="Black">#000000</color>
+   <color name="Blue">#0066cc</color>
+   <color name="Gray">#999999</color>
+   <color name="Navy">#000080</color>
+   <color name="Orange">#ff5500</color>
+   <color name="Transparent">#00000000</color>
+   <color name="White">#ffffff</color>   
+
+   <color name="Soft.Crap.BarBackground">@color/Blue</color>
+   <color name="Soft.Crap.BarForeground">@color/White</color>   
+   <color name="Soft.Crap.ImageBackground">@color/Black</color>
+   <color name="Soft.Crap.InnerFrame">@color/White</color>
+   <color name="Soft.Crap.OuterFrame">@color/Black</color>
+   
+</resources>

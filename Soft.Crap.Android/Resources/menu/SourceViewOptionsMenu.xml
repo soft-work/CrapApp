@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  
+  <item android:id="@+id/EditSourceItem"
+        android:icon="@drawable/ic_menu_camera"
+        android:title="@string/EditSourceItem"
+        android:showAsAction="ifRoom" />
+  
+  <item android:id="@+id/MoreOptionsItem"
+        android:icon="@drawable/ic_menu_moreoverflow_normal_holo_dark"
+        android:title="@string/MoreOptionsItem"
+        android:showAsAction="always" />
+  
+</menu>
+

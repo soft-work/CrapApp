@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:background="@color/Soft.Crap.BarBackground"                
+                android:layout_height="40dp"
+                android:layout_width="match_parent"
+                android:orientation="horizontal">
+
+  <LinearLayout android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:orientation="horizontal">
+             
+      <Button android:background="@drawable/GridViewButton"
+              android:contentDescription="@string/GridViewItem"
+              android:gravity="center" 
+              android:id="@+id/GridViewButton"              
+              android:layout_height="22dp"           
+              android:layout_marginBottom="8dp"
+              android:layout_marginLeft="14dp"
+              android:layout_marginRight="14dp"
+              android:layout_marginTop="8dp"
+              android:scaleType="center"
+              android:layout_width="22dp" />
+        
+      <Button android:background="@drawable/ListViewButton"
+              android:contentDescription="@string/ListViewItem"
+              android:gravity="center" 
+              android:id="@+id/ListViewButton"
+              android:layout_height="22dp"
+              android:layout_marginBottom="8dp"
+              android:layout_marginLeft="14dp"
+              android:layout_marginRight="14dp"
+              android:layout_marginTop="8dp"
+              android:layout_width="22dp" />
+        
+      <Button android:background="@drawable/CropImageButton"
+              android:contentDescription="@string/CropImageItem"
+              android:gravity="center" 
+              android:id="@+id/CropThumbnailButton"
+              android:layout_height="22dp"
+              android:layout_marginBottom="8dp"
+              android:layout_marginLeft="14dp"
+              android:layout_marginRight="14dp"
+              android:layout_marginTop="8dp"
+              android:layout_width="22dp" />
+     
+      <Button android:background="@drawable/FitImageButton"
+              android:contentDescription="@string/FitImageItem"
+              android:gravity="center" 
+              android:id="@+id/FitThumbnailButton"
+              android:layout_height="22dp"
+              android:layout_marginBottom="8dp"
+              android:layout_marginLeft="14dp"
+              android:layout_marginRight="14dp"
+              android:layout_marginTop="8dp"
+              android:layout_width="22dp" />
+
+   </LinearLayout>
+
+   <TextView android:background="@color/Soft.Crap.BarBackground"
+             android:gravity="center_vertical|right"                 
+             android:id="@+id/FooterScrollText"
+             android:layout_alignParentBottom="true"
+             android:layout_alignParentRight="true"
+             android:layout_height="40dp"                
+             android:layout_marginRight="20dp"                
+             android:layout_width="140dp"             
+             android:textColor="@color/Soft.Crap.BarForeground"
+             android:textSize="16sp" />
+  
+</RelativeLayout>
+                

@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{23C799E6-BDDA-4F84-A9A1-6F93BFA6D13B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Soft.Crap</RootNamespace>
+    <AssemblyName>Soft.Crap</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Caching\PortableBasicLruCache.cs" />
+    <Compile Include="Caching\PortableSizeAwareEntry.cs" />
+    <Compile Include="Caching\PortableSizeAwareCache.cs" />
+    <Compile Include="Correlation\PortableCorrelatedEntity.cs" />
+    <Compile Include="Exceptions\PortableExceptionExtensions.cs" />
+    <Compile Include="Exceptions\UnobservedExceptionHandler.cs" />
+    <Compile Include="IO\PortableFileDescriber.cs" />
+    <Compile Include="IO\PortableSourceData.cs" />
+    <Compile Include="IO\PortableSourceReader.cs" />
+    <Compile Include="IO\PortableSourceWriter.cs" />
+    <Compile Include="IO\PortableFileEnumerator.cs" />
+    <Compile Include="Logging\PortableContextLogger.cs" />
+    <Compile Include="Exceptions\CorruptObjectException.cs" />
+    <Compile Include="Exceptions\MulticastDelegateExtensions.cs" />
+    <Compile Include="PortableSourceRepository.cs" />
+    <Compile Include="Properties\ApplicationInfo.cs" />
+    <Compile Include="Rendering\PortableAsyncRenderer.cs" />
+    <Compile Include="Rendering\PortableSyncRenderer.cs" />
+    <Compile Include="Sources\PortableBaseSource.cs" />
+    <Compile Include="Objects\PortableBaseObject.cs" />
+    <Compile Include="Sources\PortableDirectorySource.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PortableObjectRepository.cs" />
+    <Compile Include="Objects\PortableFileObject.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

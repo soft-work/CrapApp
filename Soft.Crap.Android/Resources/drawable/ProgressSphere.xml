@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"                
+                android:oneshot="false">
+  
+   <item android:drawable="@drawable/progress_sphere_1" android:duration="200" />
+   <item android:drawable="@drawable/progress_sphere_2" android:duration="200" />
+   <item android:drawable="@drawable/progress_sphere_3" android:duration="200" />
+   <item android:drawable="@drawable/progress_sphere_4" android:duration="200" />
+   <!--item android:drawable="@drawable/progress_sphere_5" android:duration="40" />
+   <item android:drawable="@drawable/progress_sphere_6" android:duration="40" />
+   <item android:drawable="@drawable/progress_sphere_7" android:duration="40" />
+   <item android:drawable="@drawable/progress_sphere_8" android:duration="40" /-->
+
+</animation-list>

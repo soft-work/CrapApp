@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                tools:context="com.inducesmile.androidcameraapi2.AndroidCameraApi"
+                android:background="@color/Soft.Crap.ImageBackground"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"                
+                android:orientation="vertical">
+  
+  <TextureView android:id="@+id/TextureView"
+               android:layout_height="match_parent"
+               android:layout_width="match_parent" />
+
+  <Button android:background="@drawable/CaptureButton"
+          android:id="@+id/CaptureButton"
+          android:layout_centerHorizontal="true"          
+          android:layout_alignBottom="@id/TextureView"
+          android:layout_height="wrap_content"
+          android:layout_width="wrap_content" />
+          
+</RelativeLayout>

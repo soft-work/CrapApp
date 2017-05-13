@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+  
+   <!-- https://developer.android.com/guide/topics/resources/drawable-resource.html#LayerList -->
+  
+   <item>     
+     <bitmap android:src="@drawable/CrapAppIcon"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:tileMode="disabled"
+             android:scaleType="centerCrop"
+             android:gravity="center" />
+   </item>
+
+  <item>
+     <bitmap android:src="@drawable/CrapAppIcon"
+             android:tileMode="disabled"
+             android:gravity="center" />
+   </item>
+
+</layer-list>

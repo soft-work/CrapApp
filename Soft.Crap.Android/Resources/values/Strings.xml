@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   <string name="AddObjectItem">New</string>
+   <string name="AlertCancelButton">Cancel</string>
+   <string name="AlertCloseButton">Close</string>
+   <string name="AlertDeleteButton">Delete</string>
+   <string name="AlertRecaptureButton">Retry</string>
+   <string name="ApplicationName">CrapApp</string>
+   <string name="AudioObjectType">Audio</string>
+   <string name="CorruptObjectFormat">Corrupt object detected: {0}.</string>   
+   <string name="CropImageItem">Crop</string>
+   <string name="DeleteObjectItem">Delete</string>
+   <string name="DeleteReceiptTitle">Delete Receipt?</string>
+   <string name="DeleteReceiptQuestion">Are you sure you want to delete selected receipt?</string>
+   <string name="EditSourceItem">Edit</string>
+   <string name="FitImageItem">Fit</string>
+   <string name="ImageObjectType">Image</string>   
+   <string name="GridViewItem">Thumbnails</string>
+   <string name="ScaleTypeItem">Thumbnail</string>
+   <string name="ListViewItem">Details</string>
+   <string name="NoCameraApplicationInfo">There is no application registered, which is capable of taking picures.</string>
+   <string name="MoreOptionsItem">More ...</string>
+   <string name="ScrollTextFormat">{0} to {1} of {2}</string>
+   <string name="SearchObjectsItem">Search</string>
+   <string name="SplashTextFormat">{0} items found ...</string>
+   <string name="VideoObjectType">Video</string>
+   <string name="VideoErrorFormat"> "An error occured while playing video '{0}'."</string>
+   <string name="ViewTypeItem">Layout</string>
+</resources>
