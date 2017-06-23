@@ -14,7 +14,7 @@ namespace Soft.Crap.Android.Activities.Video
 {
     [Activity(Theme = "@style/Soft.Crap")]
 
-    public class AndroidPlayAUdioActivity : Activity
+    public class AndroidPlayAudioActivity : Activity
     {
         public const string DeviceOrientationExtra = "DeviceOrientation";
         public const string AudioPathExtra = "AudioPath";
@@ -36,7 +36,7 @@ namespace Soft.Crap.Android.Activities.Video
 
             _audioPath = Intent.GetStringExtra(AudioPathExtra);
 
-            if (_videoPath == null)
+            if (_audioPath == null)
             {
                 throw new InvalidOperationException(string.Format("'{0}' extra string missing.",
                                                     AudioPathExtra));
@@ -86,7 +86,7 @@ namespace Soft.Crap.Android.Activities.Video
                 new VideoErrorListener
                 (
                     this,
-                    _videoPath,
+                    _audioPath,
                     getString : (resource) => { return GetString(resource); }
                 )
             );           
@@ -99,7 +99,7 @@ namespace Soft.Crap.Android.Activities.Video
                () => PlayVideoAsync()
             );*/
 
-            _videoView.SetVideoPath(_videoPath);
+            _videoView.SetVideoPath(_audioPath);
         }
 
         protected override void OnResume()
