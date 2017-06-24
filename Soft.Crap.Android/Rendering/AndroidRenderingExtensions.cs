@@ -288,9 +288,9 @@ namespace Soft.Crap.Android.Rendering
                 () => { thumbnailView.SetImageDrawable(thumbnailDrawable); }
             );            
 
-            AndroidCrapApplication.ApplicationLogger.LogDebug("{0} : {1}",
+            /*AndroidCrapApplication.ApplicationLogger.LogDebug("{0} : {1}",
                                                               correlatedEntity.CorrelationTag,
-                                                              GC.GetTotalMemory(false));
+                                                              GC.GetTotalMemory(false));*/
         }
     }
 }

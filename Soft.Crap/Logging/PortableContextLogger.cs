@@ -8,7 +8,7 @@ namespace Soft.Crap.Logging
         (
             string format,
             params object[] arguments
-        );        
+        );
 
         void LogError
         (

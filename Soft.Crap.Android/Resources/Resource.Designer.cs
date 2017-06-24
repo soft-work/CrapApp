@@ -638,9 +638,6 @@ namespace Soft.Crap.Android
 			// aapt resource value: 0x7f0a003a
 			public const int MoreOptionsItem = 2131361850;
 			
-			// aapt resource value: 0x7f0a0035
-			public const int ObjectCount = 2131361845;
-			
 			// aapt resource value: 0x7f0a0022
 			public const int ObjectDescription = 2131361826;
 			
@@ -667,6 +664,9 @@ namespace Soft.Crap.Android
 			
 			// aapt resource value: 0x7f0a002e
 			public const int PlayedVideo = 2131361838;
+			
+			// aapt resource value: 0x7f0a0035
+			public const int ProgressCount = 2131361845;
 			
 			// aapt resource value: 0x7f0a0016
 			public const int RotateButton = 2131361814;

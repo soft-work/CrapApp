@@ -4,12 +4,12 @@
   <style name="Soft.Crap.Splash" parent ="Soft.Crap">    
     <item name="android:windowBackground">@drawable/SplashLayers</item>
     <item name="android:windowFullscreen">true</item>
-    <item name="android:windowNoTitle">true</item>    
+    <item name="android:windowNoTitle">true</item>
   </style>
 
   <style name="Soft.Crap.Camera" parent ="Soft.Crap">
     <item name="android:windowNoTitle">true</item>
-    <item name="android:windowFullscreen">true</item>    
+    <item name="android:windowFullscreen">true</item>
   </style>
     
   <style name="Soft.Crap" parent="@android:style/Theme.Holo.Light">

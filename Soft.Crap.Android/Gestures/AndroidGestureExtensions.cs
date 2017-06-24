@@ -17,7 +17,7 @@ namespace Soft.Crap.Android.Gestures
 
             var shadowBuilder = new View.DragShadowBuilder(draggedView);
 
-            draggedView.StartDrag// Start/*DragAndDrop*/
+            draggedView.StartDrag // StartDragAndDrop
             (
                 null, // the data to be dragged
                 shadowBuilder,

@@ -71,7 +71,8 @@ namespace Soft.Crap.Android.Objects
             int deviceOrientation
         )
         {
-            var editImageIntent = new Intent(currentContext, typeof(AndroidEditImageActivity));
+            var editImageIntent = new Intent(currentContext,
+                                             typeof(AndroidEditImageActivity));
 
             editImageIntent.PutExtra(AndroidEditImageActivity.DeviceOrientationExtra,
                                      deviceOrientation);

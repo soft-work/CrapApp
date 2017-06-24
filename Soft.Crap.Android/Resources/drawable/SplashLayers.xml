@@ -5,7 +5,7 @@
    <!-- https://developer.android.com/guide/topics/resources/drawable-resource.html#LayerList -->
   
    <item>     
-     <bitmap android:src="@drawable/CrapAppIcon"
+     <bitmap android:src="@drawable/CrapAppSplash"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              android:tileMode="disabled"

@@ -150,10 +150,10 @@ namespace Soft.Crap.Android.Adapters
             var asyncRenderer = syncRenderer as PortableAsyncRenderer<Bitmap>;
             var correlatedEntity = syncRenderer as PortableCorrelatedEntity;
             
-            AndroidCrapApplication.ApplicationLogger.LogDebug("{0} - {1} : {2}",
+            /*AndroidCrapApplication.ApplicationLogger.LogDebug("{0} - {1} : {2}",
                                                               itemPosition,
                                                               correlatedEntity.CorrelationTag,
-                                                              GC.GetTotalMemory(false));
+                                                              GC.GetTotalMemory(false));*/
 
             if ((asyncRenderer != null) && (correlatedEntity != null))
             {

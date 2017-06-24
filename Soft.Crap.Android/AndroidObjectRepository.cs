@@ -10,8 +10,6 @@ using Soft.Crap.Logging;
 using Soft.Crap.Objects;
 using Soft.Crap.Sources;
 
-using Environment = System.Environment;
-
 namespace Soft.Crap.Android
 {
     public static class AndroidObjectRepository
@@ -22,32 +20,20 @@ namespace Soft.Crap.Android
             Action<int> updateCount
         )
         {
-            // http://blog.wislon.io/posts/2014/09/28/xamarin-and-android-how-to-use-your-external-removable-sd-card
+            IReadOnlyDictionary<string, string> fileProviders = AndroidCrapApplication.GetFileProviders
+            (
+                phoneProviderKey : "Phone",
 
-            //File[] externalMediaDirs = ACTIVITY GetExternalMediaDirs();
-            //File externalFilesDir = GetExternalFilesDirs();
+                phoneProviderRoot : "/storage/emulated/0", // TODO: how do I know it?
 
-            //string cardPath = GetCardPath();
-
-            IReadOnlyDictionary<string, string> fileProviders = new Dictionary<string, string>
-            {
-                ["Phone"] = "/storage/emulated/0",
-                ["Card"] = "/storage/1E50-B617",
-                //["Test"] = Environment.GetExternalStoragePublicDirectory(Environment.DirectoryPictures).Path + "/Test",
-                //["Camera"] = Environment.GetExternalStoragePublicDirectory(Environment.DirectoryDcim).Path + "/Camera",
-                //["Card"] = Environment.GetExternalStoragePublicDirectory(Environment.DirectoryDcim).Path.Replace("emulated/0", "1E50-B617") + "/Camera",
-                //["Crap"] = Environment.GetExternalStoragePublicDirectory(Environment.DirectoryPictures).Path + "/CrapApp",
-                //["WhatsApp Received"] = Environment.ExternalStorageDirectory.Path + "/WhatsApp/Media/WhatsApp Images",
-                //["WhatsApp Sent"] = Environment.ExternalStorageDirectory.Path + "/WhatsApp/Media/WhatsApp Images/Sent"
-
-                //Computer\Galaxy S5\Phone\WhatsApp\Media\WhatsApp Images
-            };
+                cardProviderPrefix : "Card"
+            );
 
             string sourceFile = AndroidCrapApplication.GetSourceFilePath();
 
             // https://developer.android.com/guide/topics/media/media-formats.html           
 
-            /*Task imageTask = CreateObjectLoadingTask
+            Task imageTask = CreateObjectLoadingTask
             (
                 contextLogger,
                 updateCount,
@@ -71,7 +57,7 @@ namespace Soft.Crap.Android
                 "png",
                 "tiff",
                 "webp"
-            );*/
+            );
 
             Task videoTask = CreateObjectLoadingTask
             (
@@ -132,7 +118,7 @@ namespace Soft.Crap.Android
                 "xmf"
             );            
 
-            await Task.WhenAll(//imageTask,
+            await Task.WhenAll(imageTask,
                                videoTask,
                                audioTask);
         }

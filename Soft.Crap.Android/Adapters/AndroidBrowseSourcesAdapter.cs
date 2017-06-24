@@ -149,13 +149,13 @@ namespace Soft.Crap.Android.Adapters
 
             if (sourceThumbnail != null)
             {
-                if (objectSource.Key.ProviderName == "Card")
+                if (objectSource.Key.ProviderName == "Phone") // TODO hardcoded!
                 {
-                    sourceThumbnail.SetImageResource(Resource.Drawable.perm_group_user_dictionary);
+                    sourceThumbnail.SetImageResource(Resource.Drawable.perm_group_display);
                 }
                 else
                 {
-                    sourceThumbnail.SetImageResource(Resource.Drawable.perm_group_display);
+                    sourceThumbnail.SetImageResource(Resource.Drawable.perm_group_user_dictionary);
                 }
 
                 if (sourceEnabled != null)

@@ -162,7 +162,7 @@ namespace Soft.Crap
                                               objectsLock,
                                               createObject);
 
-                                //updateCount?.Invoke(_cachedObjects.Count);                            
+                                updateCount?.Invoke(_cachedObjects.Count);                            
                             }
                         }
                     );

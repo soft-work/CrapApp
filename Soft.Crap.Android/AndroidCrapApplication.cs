@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 using Android.App;
 using Android.Content;
@@ -16,6 +18,7 @@ using Soft.Crap.IO;
 using Soft.Crap.Logging;
 
 using Environment = System.Environment;
+using File = Java.IO.File;
 using Object = Java.Lang.Object;
 using Path = System.IO.Path;
 using Runtime = Java.Lang.Runtime;
@@ -69,28 +72,28 @@ namespace Soft.Crap.Android
             base.OnLowMemory();            
         }
 
-        public override void OnTrimMemory
+        /*public override void OnTrimMemory
         (
             [GeneratedEnum] TrimMemory level
         )
         {
             base.OnTrimMemory(level);          
-        }                          
+        }*/                         
 
         public override void OnCreate()
         {
-            ApplicationLogger.LogDebug("MEMORY 0 : {0}",                                                                          
-                                       GC.GetTotalMemory(false));
+            //ApplicationLogger.LogDebug("MEMORY 0 : {0}",                                                                          
+            //                           GC.GetTotalMemory(false));
             base.OnCreate();
 
-            ApplicationLogger.LogDebug("MEMORY 1 : {0}",
-                                       GC.GetTotalMemory(false));
+            //ApplicationLogger.LogDebug("MEMORY 1 : {0}",
+            //                           GC.GetTotalMemory(false));
 
             UnhandledExceptionHandler.Activate();
 
             CreateBitmapCache();
 
-            RegisterActivityLifecycleCallbacks(new ActivityLifecycleCallbacks());
+            RegisterActivityLifecycleCallbacks(new ActivityLifecycleCallbacks());            
 
             PortableObjectRepository<Activity>.RegisterPlatformSpecific
             (
@@ -111,8 +114,98 @@ namespace Soft.Crap.Android
                 sourceWriterFactory : AndroidSourceRepository.CreateSourceWriter
             );
 
-            ApplicationLogger.LogDebug("MEMORY 2 : {0}",
-                                       GC.GetTotalMemory(false));
+            //ApplicationLogger.LogDebug("MEMORY 2 : {0}",
+            //                           GC.GetTotalMemory(false));
+        }
+
+        public static IReadOnlyDictionary<string, string> GetFileProviders
+        (
+            string phoneProviderKey,
+            string phoneProviderRoot,
+            string cardProviderPrefix
+        )
+        {
+            // TODO: move to separate class, write tests, revisit conditions and improve exception messages. 
+
+            var fileProviders = new Dictionary<string, string>();
+
+            // http://blog.wislon.io/posts/2014/09/28/xamarin-and-android-how-to-use-your-external-removable-sd-card
+
+            File[] externalMediaDirectories = Context.GetExternalMediaDirs();
+
+            if (externalMediaDirectories.Length == 0)
+            {
+                throw new InvalidOperationException(nameof(externalMediaDirectories.Length));
+            }
+
+            string[] externalMediaPaths = externalMediaDirectories.Select
+            (
+                externalMediaDirectory => externalMediaDirectory.Path
+            )
+            .ToArray();
+
+            fileProviders[phoneProviderKey] = phoneProviderRoot;
+
+            string phoneMediaPath = externalMediaPaths.FirstOrDefault
+            (
+                externalMediaPath => externalMediaPath.StartsWith(fileProviders[phoneProviderKey])
+            );
+
+            if (phoneMediaPath == null)
+            {
+                throw new InvalidOperationException(nameof(phoneMediaPath));
+            }
+
+            if (phoneMediaPath.Length <= phoneProviderRoot.Length)
+            {
+                throw new InvalidOperationException(nameof(phoneMediaPath));
+            }
+
+            string mediaPathTail = phoneMediaPath.Substring(phoneProviderRoot.Length);
+
+            int cardNumber = 1;
+
+            string firstCardKey = null;
+
+            foreach(string externalMediaPath in externalMediaPaths)
+            {
+                if (externalMediaPath == phoneMediaPath)
+                {
+                    continue;
+                }
+
+                if (externalMediaPath.EndsWith(mediaPathTail) == false)
+                {
+                    throw new InvalidOperationException(nameof(externalMediaPath));
+                }
+
+                string cardProviderRoot = externalMediaPath.Remove(externalMediaPath.Length - mediaPathTail.Length);
+
+                if (cardProviderRoot.Length == 0)
+                {
+                    throw new InvalidOperationException(nameof(cardProviderRoot));
+                }
+
+                string cardProviderKey = cardProviderPrefix + ' ' + cardNumber;                
+
+                fileProviders[cardProviderKey] = cardProviderRoot;
+
+                if (firstCardKey == null)
+                {
+                    firstCardKey = cardProviderKey;
+                }
+            }
+
+            if (fileProviders.Count == 2)
+            {
+                string cardProviderRoot = fileProviders[firstCardKey];
+
+                fileProviders[cardProviderPrefix] = cardProviderRoot;
+
+                fileProviders.Remove(firstCardKey);
+            }            
+
+            return fileProviders;
         }
 
         public static string GetSourceFilePath()

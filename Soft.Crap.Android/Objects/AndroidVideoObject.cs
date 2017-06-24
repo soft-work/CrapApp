@@ -68,7 +68,8 @@ namespace Soft.Crap.Android.Objects
             int deviceOrientation
         )
         {
-            var playVideoIntent = new Intent(currentContext, typeof(AndroidPlayVideoActivity));
+            var playVideoIntent = new Intent(currentContext,
+                                             typeof(AndroidPlayVideoActivity));
 
             playVideoIntent.PutExtra(AndroidPlayVideoActivity.DeviceOrientationExtra,
                                      deviceOrientation);

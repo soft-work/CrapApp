@@ -27,13 +27,14 @@ namespace Soft.Crap.Android.Activities.Splash
             Bundle bundle
         )
         {
-            AndroidCrapApplication.ApplicationLogger.LogDebug("MEMORY 4 : {0}",
-                                                              GC.GetTotalMemory(false));
+            //AndroidCrapApplication.ApplicationLogger.LogDebug("MEMORY 4 : {0}",
+            //                                                  GC.GetTotalMemory(false));
+
             base.OnCreate(bundle);
 
             SetContentView(Resource.Layout.SplashScreenLayout);
 
-            _progressCount = FindViewById<TextView>(Resource.Id.ObjectCount);            
+            _progressCount = FindViewById<TextView>(Resource.Id.ProgressCount);      
 
             ImageView splashProgress = FindViewById<ImageView>(Resource.Id.SplashProgress);
             splashProgress.SetBackgroundResource(Resource.Drawable.ProgressSphere);
@@ -41,8 +42,9 @@ namespace Soft.Crap.Android.Activities.Splash
             AnimationDrawable splashAnimation = splashProgress.Background as AnimationDrawable;
             Exception loadingException = null;
 
-            AndroidCrapApplication.ApplicationLogger.LogDebug("MEMORY 5 : {0}",
-                                                              GC.GetTotalMemory(false));
+            //AndroidCrapApplication.ApplicationLogger.LogDebug("MEMORY 5 : {0}",
+            //                                                  GC.GetTotalMemory(false));
+
             splashAnimation?.Start();
             _loadingContext = this;
 
@@ -52,14 +54,15 @@ namespace Soft.Crap.Android.Activities.Splash
                 (
                     GetString(Resource.String.SplashTextFormat),
 
-                    updateText: (progressText) => { UpdateText(progressText); },
+                    updateText : (progressText) => UpdateText(progressText),
 
-                    getContext: () => { return GetContext(); }
+                    getContext : () => { return GetContext(); }
                 );
             }
 
-            AndroidCrapApplication.ApplicationLogger.LogDebug("MEMORY 6 : {0}",
-                                                              GC.GetTotalMemory(false));
+            //AndroidCrapApplication.ApplicationLogger.LogDebug("MEMORY 6 : {0}",
+            //                                                  GC.GetTotalMemory(false));
+
             try
             {                
                 await _loadingTask;
@@ -94,8 +97,8 @@ namespace Soft.Crap.Android.Activities.Splash
                 return;
             }
 
-            AndroidCrapApplication.ApplicationLogger.LogDebug("MEMORY 7 : {0}",
-                                                              GC.GetTotalMemory(false));
+            //AndroidCrapApplication.ApplicationLogger.LogDebug("MEMORY 7 : {0}",
+            //                                                  GC.GetTotalMemory(false));
         }
 
         protected override void OnDestroy()
